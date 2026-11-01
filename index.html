@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b6b5c">
+<title>Chatly</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH -->
+<div id="auth" class="auth hidden">
+  <div class="auth-card">
+    <div class="logo">💬</div>
+    <h1>Chatly</h1>
+    <p class="muted">Simple, real-time messaging</p>
+    <form id="authForm">
+      <input id="aName" placeholder="Your name" autocomplete="name" class="hidden">
+      <input id="aPhone" placeholder="Phone number (e.g. +919876543210)" inputmode="tel" autocomplete="tel">
+      <input id="aPass" type="password" placeholder="Password" autocomplete="current-password">
+      <button class="btn" id="aSubmit">Sign in</button>
+      <div id="aErr" class="err"></div>
+    </form>
+    <a href="#" id="aToggle" class="link">New here? Create an account</a>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app" class="app hidden">
+  <aside class="side" id="side">
+    <header class="bar">
+      <div class="avatar" id="meAvatar" title="Profile"></div>
+      <div class="spacer"></div>
+      <button class="icon" id="btnNewGroup" title="New group">👥</button>
+      <button class="icon" id="btnNewChat" title="New chat">✉️</button>
+      <button class="icon" id="btnLogout" title="Sign out">⎋</button>
+    </header>
+    <div class="searchwrap"><input id="search" placeholder="Search or start new chat"></div>
+    <div id="chatList" class="chatlist"></div>
+  </aside>
+
+  <main class="main" id="main">
+    <div class="empty" id="empty">
+      <div class="logo big">💬</div>
+      <h2>Chatly Web</h2>
+      <p class="muted">Send and receive messages in real time.<br>Pick a chat or start a new one with a phone number.</p>
+    </div>
+
+    <section class="chat hidden" id="chatPane">
+      <header class="bar">
+        <button class="icon back" id="btnBack">←</button>
+        <div class="avatar" id="cAvatar"></div>
+        <div class="titlebox">
+          <div class="title" id="cTitle"></div>
+          <div class="sub" id="cSub"></div>
+        </div>
+      </header>
+      <div class="msgs" id="msgs"></div>
+      <div id="replyBar" class="replybar hidden">
+        <div class="rtxt"><b id="rbWho"></b><div id="rbTxt"></div></div>
+        <button class="icon" id="rbClose">✕</button>
+      </div>
+      <footer class="composer">
+        <div class="emojis hidden" id="emojiPanel"></div>
+        <button class="icon" id="btnEmoji">😊</button>
+        <button class="icon" id="btnAttach">📎</button>
+        <input type="file" id="fileInput" class="hidden">
+        <input id="msgInput" placeholder="Type a message" autocomplete="off">
+        <button class="send" id="btnSend">➤</button>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden"><div class="modal-card" id="modalCard"></div></div>
+<div id="toast" class="toast hidden"></div>
+<div id="lightbox" class="lightbox hidden"><img id="lbImg"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
