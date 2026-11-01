@@ -1,0 +1,12 @@
+{
+  "name": "chatly",
+  "version": "1.0.0",
+  "description": "A real-time messaging web app with 1:1 chats, groups, read receipts and media sharing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
